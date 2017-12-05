@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <form class="form-inline">
+                        <form class="form-inline" id="film-form">
                             <div class="col-12"><h4 class="text-center vertical-intend">Production Year</h4></div>
                             <div class="col-6">
                                 <div class="form-group">
@@ -51,25 +51,25 @@
                                 <h4 class="text-center vertical-intend">Genres</h4>
                                 <div class="form-group">
                                     <label for="genres" class="sr-only">Genres</label><br>
-                                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                                        <option data-id="18">Action</option>
-                                        <option data-id="12">Adventure</option>
-                                        <option data-id="16">Animation</option>
-                                        <option data-id="35">Comedy</option>
-                                        <option data-id="99">Documentary</option>
-                                        <option data-id="18">Drama</option>
-                                        <option data-id="10751">Family</option>
-                                        <option data-id="14">Fantasy</option>
-                                        <option data-id="35">History</option>
-                                        <option data-id="27">Horror</option>
-                                        <option data-id="10402">Music</option>
-                                        <option data-id="9648">Mystery</option>
-                                        <option data-id="10749">Romance</option>
-                                        <option data-id="878">Science Fiction</option>
-                                        <option data-id="10770">TV Movie</option>
-                                        <option data-id="53">Thriller</option>
-                                        <option data-id="10752">War</option>
-                                        <option data-id="37">Western</option>
+                                    <select multiple class="form-control" id="genres">
+                                        <option value="18">Action</option>
+                                        <option value="12">Adventure</option>
+                                        <option value="16">Animation</option>
+                                        <option value="35">Comedy</option>
+                                        <option value="99">Documentary</option>
+                                        <option value="18">Drama</option>
+                                        <option value="10751">Family</option>
+                                        <option value="14">Fantasy</option>
+                                        <option value="35">History</option>
+                                        <option value="27">Horror</option>
+                                        <option value="10402">Music</option>
+                                        <option value="9648">Mystery</option>
+                                        <option value="10749">Romance</option>
+                                        <option value="878">Science Fiction</option>
+                                        <option value="10770">TV Movie</option>
+                                        <option value="53">Thriller</option>
+                                        <option value="10752">War</option>
+                                        <option value="37">Western</option>
                                     </select>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <button class="btn btn-dark btn-block btn-select vertical-intend" role="submit">Find the film</button>
+                                <input type="submit" class="btn btn-dark btn-block btn-select vertical-intend" role="submit" value="Find the film">
                             </div>
                         </form>
                     </div>
