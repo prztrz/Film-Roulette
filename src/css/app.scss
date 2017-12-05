@@ -1,11 +1,31 @@
 @import './countrySelect.scss';
 
+@mixin select-scrollbar ($focus) {
+    &::-webkit-scrollbar {
+        width: 1em;
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background-color: #564e3c;
+      border-radius: 25px;
+      outline: 1px solid slategrey;
+
+      @if $focus == 'true' {
+          background-color: rgba(114, 33, 10, 0.877);
+      }
+    }
+}
+
 * {
     box-sizing: border-box;
 }
 
 .nopadding {
     padding: 0;
+}
+
+.vertical-intend {
+    margin-top: 15px;
 }
 
 body {
@@ -57,14 +77,38 @@ body {
 
 .main-content {
     background-color: #938665;
+    padding: 85px 0;
 
     .form-inline {
-        input[type="text"] {
-            width: 100%;
-        }
-
+        input[type="text"], 
         select {
             width: 100%;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: 25px;
+            &:focus {
+                box-shadow: 1px 1px 0px 1px rgba(255, 87, 34, 0.44), -1px -1px 0px 1px rgba(255, 87, 34, 0.44);
+                border-color: rgba(255, 87, 34, 0.44);
+            }
+        }
+        
+
+        select {
+            &:focus {
+                @include select-scrollbar('true')
+            }
+           @include select-scrollbar('false');
+        }
+
+        .btn-select {
+            &:hover {
+                background-color: rgba(114, 33, 10, 0.877);
+            }
+
+            &:focus {
+                box-shadow: 1px 1px 0px 1px rgba(255, 87, 34, 0.44), -1px -1px 0px 1px rgba(255, 87, 34, 0.44);
+                border-color: rgba(255, 87, 34, 0.44);
+            }
         }
     }
 }
