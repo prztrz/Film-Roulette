@@ -1,0 +1,70 @@
+@import './countrySelect.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+.nopadding {
+    padding: 0;
+}
+
+body {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.page-header {
+    &.page-intro {
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    &.background {
+        background-image: url('../../images/1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .navbar-custom {
+        font-size: 5vw;
+        background-color: rgba(0,0,0, 0.5);
+        width: 100%;
+        flex-flow: nowrap row;
+
+        @media (min-width: 575px) {
+            font-size: 3.9vw;
+        }
+        @media (min-width: 768px) {
+            font-size: 3.5vw;
+        }
+
+        @media (min-width: 992px) { 
+            font-size: 2.2vw;
+         }
+
+         .nav-link {
+             color: #94999e;
+
+             &:hover {
+                 color: #72777c
+             }
+         }
+    }  
+}
+
+.main-content {
+    background-color: #938665;
+
+    .form-inline {
+        input[type="text"] {
+            width: 100%;
+        }
+
+        select {
+            width: 100%;
+        }
+    }
+}

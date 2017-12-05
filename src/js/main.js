@@ -1,7 +1,8 @@
 import $ from "jquery";
-require('../css/app.scss')
+
+require('../css/app.scss');
+require('./countrySelect.min.js');
 
 $(() => {
-    $('#dupa').text('pupa')
-    console.log('sss')
+    $("#country").countrySelect();
 })
