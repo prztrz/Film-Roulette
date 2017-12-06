@@ -43,7 +43,7 @@ $(() => {
             method: 'get', 
             dataType: 'json', 
         }).done(function(response){ 
-            isPageRandom ? console.log(response) : getRandomPage(url, response.total_pages);
+            isPageRandom ? appendResult(response.results) : getRandomPage(url, response.total_pages);
         }).fail(function(error){ 
             console.log(error.statusText)
         }).always(function(){ 
@@ -52,9 +52,41 @@ $(() => {
     }
 
     const appendResult = results => {
-        let result = results[Math.floor(Math.random()*(results.length-1))];
+        let resultFilm = results[Math.floor(Math.random()*(results.length-1))];
+        console.log(resultFilm.overview)
+        let $resultDiv = $('#result');
+        const title = resultFilm.title
+        const imgSrc =`http://image.tmdb.org/t/p/w300${resultFilm.poster_path}`;
+        const filmHref = `https://www.themoviedb.org/movie/${resultFilm.id}`
 
-        
+        let $toAppend = $(`
+            <div class="row align-items-start">
+                <div class="col">
+                    <h3 class="text-center">${title}</h3>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="text-center">
+                        <img src="${imgSrc}" class="rounded" alt="${title} poster">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-end">
+                <div class="col-12">
+                    <a href="${filmHref}" target="_blank" class="tmdb-link"><h4 class="text-center">Film in TMDB</h4></a>
+                </div>
+
+                <div class="col-12">
+                    <p class="text-justify">${resultFilm.overview}</p>
+                </div>
+            </div>
+        `)
+
+        $resultDiv.empty();
+        $resultDiv.append($toAppend);    
     }
 
     const handleSubmit = () => {

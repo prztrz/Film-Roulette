@@ -111,4 +111,12 @@ body {
             }
         }
     }
+
+    .tmdb-link {
+        color: #000;
+
+        &:hover {
+            text-decoration-color: #000;
+        }
+    }
 }
