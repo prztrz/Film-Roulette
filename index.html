@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Film Roulette!</title>
 </head>
 <body>
@@ -42,11 +43,17 @@
                             </div>
 
                             <div class="col-6">
-                                    <div class="form-group">
-                                        <label for="year-to">To</label>
-                                        <input type="text" class="form-control" id="year-to" value="">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="year-to">To</label>
+                                    <input type="text" class="form-control" id="year-to" value="">
                                 </div>
+                            </div>
+
+                            <div class="col-12">
+                                <small class="invalid-msg" id="year-invalid">Year must be four-digits number between 1900 - current year</small>
+                                <small class="invalid-msg" id="years-same">Year from must be lower then year to.</small>
+                            </div>
+
                             <div class="col-12">
                                 <h4 class="text-center vertical-intend">Genres</h4>
                                 <div class="form-group">
@@ -72,6 +79,7 @@
                                         <option value="37">Western</option>
                                     </select>
                                 </div>
+                                <small class="invalid-msg" id="genres-invalid">At least one genre must be chosen</small>
                             </div>
 
                             <div class="col-12">
@@ -95,7 +103,7 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                       <div id="result"></div>
+                       <div class ="mt-5 mt-md-0 result" id="result"></div>
                     </div>
                 </div>
                 <!-- end of row -->
@@ -104,5 +112,6 @@
     </div>
 
     <script src="./js/app.js"></script>
+    <script src="https://use.fontawesome.com/6d3c3b735c.js"></script>
 </body>
 </html>
